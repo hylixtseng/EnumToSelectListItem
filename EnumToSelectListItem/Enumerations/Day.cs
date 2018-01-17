@@ -2,6 +2,9 @@
 
 namespace EnumToSelectListItem.Enumerations
 {
+    /// <summary>
+    /// 一星期中的日期
+    /// </summary>
     public enum Day
     {
         [Description("星期一")]

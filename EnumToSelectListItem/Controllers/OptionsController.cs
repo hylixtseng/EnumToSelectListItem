@@ -54,5 +54,25 @@ namespace EnumToSelectListItem.Controllers
 
             return Ok(items);
         }
+
+        /// <summary>
+        /// 取得職員的在職狀態清單
+        /// </summary>
+        /// <returns></returns>
+        [Route("JobStatus")]
+        [HttpGet]
+        [ProducesResponseType(typeof(SelectListItem), 200)]
+        public IActionResult GetJobStatus()
+        {
+            var items = Enum.GetValues(typeof(JobStatus))
+                .Cast<JobStatus>()
+                .Select(x => new SelectListItem()
+                {
+                    Text = x.GetDescription(),
+                    Value = Convert.ToInt32(x).ToString()
+                });
+
+            return Ok(items);
+        }
     }
 }

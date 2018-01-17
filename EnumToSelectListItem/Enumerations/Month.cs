@@ -2,6 +2,9 @@
 
 namespace EnumToSelectListItem.Enumerations
 {
+    /// <summary>
+    /// 一年中的月份
+    /// </summary>
     public enum Month
     {
         [Description("一月")]
