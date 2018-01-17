@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using System.Reflection;
+using NSwag.AspNetCore;
 
 namespace EnumToSelectListItem
 {
@@ -35,6 +37,8 @@ namespace EnumToSelectListItem
             }
 
             app.UseMvc();
+
+            app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, new SwaggerUiSettings());
         }
     }
 }
